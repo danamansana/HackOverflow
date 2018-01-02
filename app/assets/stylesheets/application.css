@@ -62,6 +62,7 @@ form label{
   display: flex;
   width: 90%;
   justify-content: right;
+  align-items: right;
 }
 
 .session_form h1 {

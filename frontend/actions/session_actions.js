@@ -33,3 +33,5 @@ export const logout = () => (dispatch) => {
     .then((currentUser => dispatch(receiveCurrentUser(null))),
           (errors) => dispatch(receiveErrors(errors.responseJSON)));
 };
+
+////
