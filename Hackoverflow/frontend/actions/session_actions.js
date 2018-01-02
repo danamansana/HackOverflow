@@ -5,13 +5,13 @@ export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const receiveCurrentUser = (currentUser) => {
   return {
     type: RECEIVE_CURRENT_USER,
-    data: {currentUser}
+    currentUser
   };
 };
 export const receiveErrors = (errors) => {
   return {
     type: RECEIVE_ERRORS,
-    data: {errors}
+    errors
   };
 };
 
