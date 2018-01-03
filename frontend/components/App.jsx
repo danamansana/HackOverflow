@@ -1,5 +1,6 @@
 import React from 'react';
 import NavContainer from './nav_container';
+import ItemsIndexContainer from './item_index_container';
 import { Provider } from 'react-redux';
 import {
   Route,
@@ -12,11 +13,12 @@ import SessionFormContainer from './session_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
   <div>
-    
+
     <NavContainer/>
     <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
+      <Route exact path="/" component={ItemsIndexContainer} />
     </Switch>
   </div>
 );

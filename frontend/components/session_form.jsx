@@ -35,13 +35,6 @@ class SessionForm extends React.Component {
 
   render () {
 
-    // let errorText = () => {
-    //   if(this.props.errors){
-    //     return (<h1>{this.props.errors}</h1>);
-    //   }else{
-    //     return(<div></div>);
-    //   }
-    // };
     let errorClassName = (this.props.errorsVisible ? "errorClass" : "");
     return (
       <div className='session_form'>
