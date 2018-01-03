@@ -61,14 +61,13 @@ form label{
 .buttoncontainer {
   display: flex;
   width: 90%;
-  justify-content: right;
+  justify-content: flex-end;
   align-items: right;
 }
 
-.session_form h1 {
+.errorClass {
   background-color: red;
   color: white;
-  width: 25%;
-  height: 50px;
-  font: 25px;
+  font-size: 20px;
+  height: 25px;
 }

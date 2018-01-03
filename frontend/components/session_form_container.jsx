@@ -2,13 +2,15 @@ import {connect} from 'react-redux';
 import SessionForm from "./session_form";
 import {signup, login} from '../actions/session_actions';
 import { withRouter } from 'react-router';
+import {isEmpty} from 'lodash';
 
 
 const mapStateToProps = (state, ownProps) => {
   return {
     loggedIn: !!state.session.currentUser,
     errors: state.errors,
-    formType: ownProps.location.pathname.slice(1)
+    formType: ownProps.location.pathname.slice(1),
+    errorsVisible: !_.isEmpty(state.errors)
   };
 };
 

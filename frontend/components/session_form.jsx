@@ -32,6 +32,14 @@ class SessionForm extends React.Component {
 
   render () {
 
+    // let errorText = () => {
+    //   if(this.props.errors){
+    //     return (<h1>{this.props.errors}</h1>);
+    //   }else{
+    //     return(<div></div>);
+    //   }
+    // };
+    let errorClassName = (this.props.errorsVisible ? "errorClass" : "")
     return (
       <div className='session_form'>
         <form onSubmit={this.handleSubmit} >
@@ -48,12 +56,10 @@ class SessionForm extends React.Component {
           </div>
           <input type="password" onChange={this.changeInput("password")} value={this.state.password}></input>
           <div className="buttoncontainer">
-            <input className="button" type="submit" value="Sign Up"></input>
-
+            <input className="button" type="submit" value={this.props.formType}></input>
           </div>
         </form>
-        <h1>{this.props.errors}</h1>
-
+        <h1 className={errorClassName}>{this.props.errors}</h1>
       </div>
     );
   }
