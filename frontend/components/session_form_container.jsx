@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import SessionForm from "./session_form";
-import {signup, login} from '../actions/session_actions';
+import {signup, login, clearErrors } from '../actions/session_actions';
 import { withRouter } from 'react-router';
 import {isEmpty} from 'lodash';
 
@@ -24,7 +24,8 @@ const mapDispatch = (dispatch, ownProps) => {
       } else {
         return dispatch(signup(user));
       }
-    }
+    },
+    clearErrors: () => dispatch(clearErrors())
   };
 };
 

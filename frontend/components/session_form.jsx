@@ -22,6 +22,9 @@ class SessionForm extends React.Component {
     if (nextProps.loggedIn) {
       this.props.history.push('/');
     }
+    if (this.props.errors.length !== 0)
+    {this.props.clearErrors();}
+    // clear errors functionality from scratch in 5 minutes. Victory is mine!!!
   }
 
   handleSubmit(e) {
@@ -39,7 +42,7 @@ class SessionForm extends React.Component {
     //     return(<div></div>);
     //   }
     // };
-    let errorClassName = (this.props.errorsVisible ? "errorClass" : "")
+    let errorClassName = (this.props.errorsVisible ? "errorClass" : "");
     return (
       <div className='session_form'>
         <form onSubmit={this.handleSubmit} >
@@ -59,7 +62,7 @@ class SessionForm extends React.Component {
             <input className="button" type="submit" value={this.props.formType}></input>
           </div>
         </form>
-        <h1 className={errorClassName}>{this.props.errors}</h1>
+        <h1 className={errorClassName}>{this.props.errors.map(error => `${error}  `)}</h1>
       </div>
     );
   }

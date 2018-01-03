@@ -12,7 +12,7 @@ import SessionFormContainer from './session_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
   <div>
-    <h1>HackOverflow</h1>
+    
     <NavContainer/>
     <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />

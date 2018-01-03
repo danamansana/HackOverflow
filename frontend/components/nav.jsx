@@ -14,17 +14,20 @@ class Nav extends React.Component {
   render() {
     if (this.props.currentUser) {
       return (
-        <div>
+        <div className="nav">
           <h1>{this.props.currentUser.username}</h1>
           <button onClick= {this.signout}>LogOut</button>
         </div>
       );
     } else {
       return (
-        <div>
-          <Link to= '/signup'>Sign Up</Link>
-          <br></br>
-          <Link to= '/login'>Log In</Link>
+        <div className="nav">
+          <h1>HackOverflow</h1>
+          <div className="button">
+
+            <Link to= '/signup' className="link">Sign Up</Link>
+            <Link to= '/login'>Log In</Link>
+          </div>
         </div>);
     }
 
