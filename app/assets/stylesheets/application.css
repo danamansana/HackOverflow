@@ -107,12 +107,31 @@ form label{
   align-items: center;
 }
 
+.item_index div{
+  width: 50%
+}
+
+
 .item_index_item {
   border-top: 1px solid rgb(228, 230, 232);
   border-bottom-color: 1px solid rgb(228, 230, 232);
   color: rgb(0, 119, 204);
   width: 50%;
   height: 80px;
+  display: flex;
+}
+
+.item_index_item .questionSideBar{
+  display: flex;
+  width: 33%;
+}
+
+.questionMain{
+  width: 66%;
+}
+
+.questionSideBar h3{
+  margin-right: 5px;
 }
 .item_index_item h1 {
   font-size: 16px;
