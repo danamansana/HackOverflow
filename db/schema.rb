@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180103160247) do
+ActiveRecord::Schema.define(version: 20180103203739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20180103160247) do
   create_table "items", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "parent_id"
-    t.string "parent_type"
+    t.string "type"
     t.string "body", null: false
     t.index ["parent_id"], name: "index_items_on_parent_id"
     t.index ["user_id"], name: "index_items_on_user_id"
