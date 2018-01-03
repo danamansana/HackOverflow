@@ -107,7 +107,7 @@ form label{
   align-items: center;
 }
 
-.item_index div{
+.item_index > div{
   width: 50%
 }
 
@@ -119,6 +119,7 @@ form label{
   width: 50%;
   height: 80px;
   display: flex;
+  font-weight: 400;
 }
 
 .item_index_item .questionSideBar{
@@ -128,6 +129,7 @@ form label{
 
 .questionMain{
   width: 66%;
+  margin: 0 auto;
 }
 
 .questionSideBar h3{
