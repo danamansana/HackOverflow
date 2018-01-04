@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import DataBox from './data_box';
 class ItemIndexItem extends React.Component {
   constructor(props){
@@ -14,7 +15,9 @@ class ItemIndexItem extends React.Component {
           <DataBox data={this.props.item.answers} datatype={'answers'}/>
         </div>
         <div className="questionMain">
-          <h1>{this.props.item.body}</h1>
+          <Link to={`question/${this.props.item.id}`}>
+            <h1>{this.props.item.body}</h1>
+          </Link>
           <h2>{`asked by ${this.props.item.author}`}</h2>
         </div>
       </li>
