@@ -1,4 +1,5 @@
 import React from 'react';
+import DataBox from './data_box';
 class ItemIndexItem extends React.Component {
   constructor(props){
     super(props);
@@ -9,8 +10,8 @@ class ItemIndexItem extends React.Component {
     return(
       <li className="item_index_item">
         <div className="questionSideBar">
-          <h3>{this.props.item.likes}</h3>
-          <h3>{this.props.item.answers}</h3>
+          <DataBox data={this.props.item.likes} datatype={'votes'}/>
+          <DataBox data={this.props.item.answers} datatype={'answers'}/>
         </div>
         <div className="questionMain">
           <h1>{this.props.item.body}</h1>
