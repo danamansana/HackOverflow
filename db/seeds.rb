@@ -10,15 +10,15 @@ User.destroy_all
 Item.destroy_all
 Like.destroy_all
 i=0
-until i == 99
+#until i == 99
+100.times do
   begin
-    user = User.create(username: Faker::Science.scientist, password: "password")
-    item = Item.create(user_id: user.id, body: "How to #{Faker::Hacker.verb} the #{Faker::Hacker.noun}?")
+    user = User.create!(username: Faker::Science.scientist, password: "password")
+    item = Item.create!(user_id: user.id, body: "How to #{Faker::Hacker.verb} the #{Faker::Hacker.noun}?")
   rescue
     retry
   end
 
-  i+=1
 end
 
 user_ids = User.all.map {|user| user.id}
