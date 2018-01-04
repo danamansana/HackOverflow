@@ -98,9 +98,9 @@ form label{
   padding: 3px;
   font-size: 20px;
   position:absolute;
-  top: 10px;
+  top: 30px;
   z-index: 1;
-  left: 995px;
+  left: 985px;
   font: Arial;
   font-size: 13px;
   font-weight: 400;
@@ -112,8 +112,8 @@ form label{
   padding: 3px;
   font-size: 20px;
   position:absolute;
-  top: 60px;
-  left: 995px;
+  top: 80px;
+  left: 985px;
   z-index: 1;
   font: Arial;
   font-size: 13px;
@@ -121,7 +121,39 @@ form label{
   font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
 
 }
+.errorClass::before {
+/* .display_thumb{ */
+content: '';
+  position: relative;
+  top: 35%;
+  left: -10px;
+  background-color: black;
+  width: 0;
+  height: 0;
+  border-top: 10px solid red;
+  border-bottom: 0 solid #000;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  background: transparent;
+}
 
+/* .display_thumb::before {
+
+} */
+
+/* .password_thumb{
+  position:absolute;
+  bottom: 16px;
+  right: 273px;
+  background-color: red;
+  width: 0;
+   height: 0;
+   border-top: 10px solid red;
+   border-bottom: 0 solid #000;
+   border-right: 10px solid transparent;
+   border-left: 10px solid transparent;
+   background: transparent;
+} */
 /* ask about including this from another file */
 
 .item_index {

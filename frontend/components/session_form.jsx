@@ -60,9 +60,13 @@ class SessionForm extends React.Component {
           <div className="buttoncontainer">
             <input className="button" type="submit" value={this.props.formType}></input>
           </div>
-          <h1 className={errorClassName(displayErrors)} id="nameErrors">{displayErrors}</h1>
-          <h1 className={errorClassName(passwordErrors)} id="passwordErrors">{passwordErrors}</h1>
-          <div className="thumb"></div>
+          <h1 className={errorClassName(displayErrors)} id="nameErrors">{displayErrors}
+          </h1>
+          <div className="display_thumb">
+          </div>
+          <h1 className={errorClassName(passwordErrors)} id="passwordErrors">{passwordErrors}
+          </h1>
+          <div className="password_thumb"> </div>
         </form>
 
       </div>
