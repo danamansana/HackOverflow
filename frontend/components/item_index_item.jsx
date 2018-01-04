@@ -9,8 +9,8 @@ class ItemIndexItem extends React.Component {
     return(
       <li className="item_index_item">
         <div className="questionSideBar">
-          <h3>Likes</h3>
-          <h3>Answers</h3>
+          <h3>{this.props.item.likes}</h3>
+          <h3>{this.props.item.answers}</h3>
         </div>
         <div className="questionMain">
           <h1>{this.props.item.body}</h1>

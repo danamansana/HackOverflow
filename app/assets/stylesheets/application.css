@@ -64,7 +64,8 @@ form label{
   border-radius: 3px;
   width: 40%;
   color: white;
-
+  display: flex;
+  justify-content: center;
 }
 
 .session_form input {
@@ -88,7 +89,7 @@ form label{
 }
 
 .errorClass {
-  background-color: red;
+  background-color: #C04848;
   color: white;
   font-size: 20px;
   height: 20px;
@@ -130,7 +131,7 @@ content: '';
   background-color: black;
   width: 0;
   height: 0;
-  border-top: 10px solid red;
+  border-top: 10px solid #C04848;
   border-bottom: 0 solid #000;
   border-right: 10px solid transparent;
   border-left: 10px solid transparent;

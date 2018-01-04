@@ -8,6 +8,7 @@
 require 'faker'
 User.destroy_all
 Item.destroy_all
+Like.destroy_all
 i=0
 until i == 99
   begin
@@ -18,4 +19,11 @@ until i == 99
   end
 
   i+=1
+end
+
+user_ids = User.all.map {|user| user.id}
+question_ids = Item.all.map {|item| item.id}
+user_ids.each do |id|
+  Like.create(user_id: id, item_id: question_ids.sample)
+  Item.create(user_id: id, body: Faker::Hacker.say_something_smart, parent_id: question_ids.sample, content_type:'answer')
 end
