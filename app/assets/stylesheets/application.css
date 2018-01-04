@@ -17,6 +17,7 @@
   color: blue;
   display: flex;
   justify-content: center;
+  position:relative;
 }
 
 .session_form form {
@@ -90,7 +91,35 @@ form label{
   background-color: red;
   color: white;
   font-size: 20px;
-  height: 25px;
+  height: 20px;
+}
+
+#nameErrors {
+  padding: 3px;
+  font-size: 20px;
+  position:absolute;
+  top: 10px;
+  z-index: 1;
+  left: 995px;
+  font: Arial;
+  font-size: 13px;
+  font-weight: 400;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+
+
+#passwordErrors {
+  padding: 3px;
+  font-size: 20px;
+  position:absolute;
+  top: 60px;
+  left: 995px;
+  z-index: 1;
+  font: Arial;
+  font-size: 13px;
+  font-weight: 400;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+
 }
 
 /* ask about including this from another file */

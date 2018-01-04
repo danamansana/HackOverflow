@@ -35,7 +35,13 @@ class SessionForm extends React.Component {
 
   render () {
 
-    let errorClassName = (this.props.errorsVisible ? "errorClass" : "");
+    //let errorClassName = (this.props.errorsVisible ? "errorClass" : "");
+    let errorClassName = (type) => {
+      return (type.length === 0 ? "" : "errorClass");
+    };
+    let displayErrors = this.props.errors.filter(word => !word.includes("Password"));
+    let passwordErrors = this.props.errors.filter( word => word.includes("Password"));
+
     return (
       <div className='session_form'>
         <form onSubmit={this.handleSubmit} >
@@ -54,8 +60,11 @@ class SessionForm extends React.Component {
           <div className="buttoncontainer">
             <input className="button" type="submit" value={this.props.formType}></input>
           </div>
+          <h1 className={errorClassName(displayErrors)} id="nameErrors">{displayErrors}</h1>
+          <h1 className={errorClassName(passwordErrors)} id="passwordErrors">{passwordErrors}</h1>
+          <div className="thumb"></div>
         </form>
-        <h1 className={errorClassName}>{this.props.errors.map(error => `${error}  `)}</h1>
+
       </div>
     );
   }
