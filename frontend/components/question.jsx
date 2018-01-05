@@ -1,5 +1,6 @@
 import React from 'react';
 import ItemIndexItem from './item_index_item';
+import ShowItem from './show_item';
 
 class Question extends React.Component{
 
@@ -22,7 +23,7 @@ class Question extends React.Component{
         <section className="answer_box">
           <h2>Answers</h2>
           <ul>
-            {Object.values(this.props.items).filter(item => (item.content_type === "answer")).map(item => <ItemIndexItem item={item}/>)}
+            {Object.values(this.props.items).filter(item => (item.content_type === "answer")).map(item => <ShowItem item={item}/>)}
           </ul>
           <section className="answerForm"></section>
         </section>
