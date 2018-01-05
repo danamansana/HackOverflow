@@ -1,15 +1,31 @@
 import React from 'react';
+import ItemIndexItem from './item_index_item';
 
 class Question extends React.Component{
+
+  constructor(props){
+    super(props);
+    this.state = {
+      ownId: this.props.match.params.question_id
+    };
+
+  }
   componentDidMount(){
     this.props.fetchItem();
   }
   render(){
-    debugger
+    let title = (Object.keys(this.props.items).length === 0 ? "" : this.props.items[this.state.ownId].body);
+
     return(
       <div>
-        <h1>{`This is the show page!`}</h1>
-        <h1>{JSON.stringify(this.props)}</h1>
+        <h1>{title}</h1>
+        <section className="answer_box">
+          <h2>Answers</h2>
+          <ul>
+            {Object.values(this.props.items).filter(item => (item.content_type === "answer")).map(item => <ItemIndexItem item={item}/>)}
+          </ul>
+          <section className="answerForm"></section>
+        </section>
       </div>
     );
   }

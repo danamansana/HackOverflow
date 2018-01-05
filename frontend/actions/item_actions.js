@@ -4,7 +4,6 @@ export const RECEIVE_ITEMS = "RECEIVE_ITEMS";
 export const RECEIVE_ITEM = 'RECEIVE_ITEM';
 
 export const receiveItem = (response) => {
-  debugger
   return {
     type: RECEIVE_ITEM,
     items: response.items,

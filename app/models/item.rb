@@ -16,7 +16,6 @@ class Item < ApplicationRecord
     item_hash = Item.item_hasher
     top_item = item_hash[nil].select {|item| item.id == own_id}[0]
     items = Item.descendents(own_id, item_hash)
-    debugger
     likes = items.map {|item| item.likes}.flatten.concat(top_item.likes)
     show = {"items" => {own_id => top_item}, "likes" => likes}
     items.each do |item|

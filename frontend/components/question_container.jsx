@@ -5,7 +5,6 @@ import { withRouter } from 'react-router';
 import { fetchItem } from '../actions/item_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return {
     items: state.items,
     likes: state.likes
