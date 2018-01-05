@@ -170,7 +170,8 @@ content: '';
 }
 
 .item_index > div{
-  width: 50%
+  width: 50%;
+  min-width: 730px;
 }
 
 
@@ -179,6 +180,7 @@ content: '';
   border-bottom-color: 1px solid rgb(228, 230, 232);
   color: rgb(0, 119, 204);
   width: 50%;
+  min-width: 730px;
   height: 80px;
   display: flex;
   font-weight: 400;
@@ -216,6 +218,12 @@ content: '';
   font-size: 13px;
   font-weight: 400;
   margin-top: 0;
+  color: #9199a1;
+  line-height: 17px;
+}
+
+.item_index_item h2 .item_author{
+  color: rgb(0, 119, 204);
 }
 
 .databox{
