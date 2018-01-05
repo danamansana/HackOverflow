@@ -5,8 +5,10 @@ import { withRouter } from 'react-router';
 import { fetchItem } from '../actions/item_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   return {
-    item: state.items[ownProps.match.params.question_id]
+    items: state.items,
+    likes: state.likes
   };
 };
 

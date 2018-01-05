@@ -7,7 +7,7 @@ const itemsReducer = (state = {}, action) => {
     case RECEIVE_ITEMS:
       return action.items;
     case RECEIVE_ITEM:
-      return merge({}, state, action.item);
+      return action.items;
     default:
       return state;
   }

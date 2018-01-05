@@ -7,10 +7,10 @@ class Api::ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find_by_id(params[:id])
-    # render :show
-    render json: {@item.id => @item}
+    render json: Item.item_payload(params[:id].to_i)
   end
+
+
 
   private
 
