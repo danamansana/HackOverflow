@@ -36,7 +36,7 @@ export const fetchItem = (id) => dispatch => {
 };
 
 export const createItem = (item) => dispatch => {
-  debugger
+  
   return ItemUtil.createItem(item).then(item => dispatch(receiveItem(item)));
 };
 

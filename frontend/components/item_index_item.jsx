@@ -7,7 +7,7 @@ class ItemIndexItem extends React.Component {
   }
 
   render(){
-    // debugger
+    
     return(
       <li className="item_index_item">
         <div className="questionSideBar">

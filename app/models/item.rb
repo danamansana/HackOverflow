@@ -20,7 +20,7 @@ class Item < ApplicationRecord
     users = {}
     items.each {|item| users[item.id] = item.user}
     users[top_item.id]= top_item.user
-    debugger
+    
     show = {"items" => {own_id => top_item}, "likes" => likes, "users" => users}
     items.each do |item|
       show["items"][item.id] = item
