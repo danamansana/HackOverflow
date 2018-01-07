@@ -3,9 +3,11 @@ import React from 'react';
 class ShowItem extends React.Component {
   render(){
     return(
-      <div>
+      <div className="show_item">
         <section className="sidebar">
+          <section className="up_arrow"/>
           {this.props.item.id}
+          <section className="down_arrow" />
         </section>
         <section className="main">
           <h1 className="body">{this.props.item.body}</h1>

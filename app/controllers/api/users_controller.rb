@@ -2,7 +2,7 @@ class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      debugger
+      
       sign_in(@user)
       render json: {username: @user.username}
     else

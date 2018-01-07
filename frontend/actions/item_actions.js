@@ -25,3 +25,12 @@ export const fetchItems = () => dispatch => {
 export const fetchItem = (id) => dispatch => {
   return ItemUtil.fetchItem(id).then(response => dispatch(receiveItem(response)));
 };
+
+export const createItem = (item) => dispatch => {
+  debugger
+  return ItemUtil.createItem(item);
+};
+
+export const updateItem = (item) => dispatch => {
+  return ItemUtil.updateItem(item);
+}

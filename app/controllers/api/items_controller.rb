@@ -10,6 +10,17 @@ class Api::ItemsController < ApplicationController
     render json: Item.item_payload(params[:id].to_i)
   end
 
+  def create
+    debugger
+    Item.create(params[:item])
+    render json: {}
+  end
+
+  def update
+    Item.update(params[:item])
+    render json: {}
+  end
+
 
 
   private
