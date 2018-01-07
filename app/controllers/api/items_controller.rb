@@ -11,13 +11,13 @@ class Api::ItemsController < ApplicationController
   end
 
   def create
-    Item.create(item_params)
-    render json: {}
+    item = Item.create(item_params)
+    render json: item
   end
 
   def update
-    Item.update(params[:item])
-    render json: {}
+    item = Item.update(item_params)
+    render json: item
   end
 
 

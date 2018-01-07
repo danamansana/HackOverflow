@@ -16,7 +16,9 @@ class ItemForm extends React.Component {
   }
 
   fixedHandleSubmit(){
-    item = {user_id: this.props.user_id, body: this.state.body, parent_id: this.props.parent_id, content_type: this.props.content_type }
+    debugger
+    let item = {user_id: this.props.user_id, body: this.state.body, parent_id: this.props.parent_id, content_type: this.props.content_type };
+    debugger
     this.props.method(item);
     this.props.addItem(item);
   }
