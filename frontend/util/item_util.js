@@ -13,10 +13,11 @@ export const fetchItem = (id) => {
 };
 
 export const createItem = (item) => {
+  debugger
   return $.ajax({
     method: "POST",
     url: "api/items",
-    item
+    data: {item}
   });
 };
 
@@ -24,6 +25,6 @@ export const updateItem = (item) => {
   return $.ajax({
     method: "PATCH",
     url: `/api/items/${item.id}`,
-    item
+    data: {item}
   });
 };

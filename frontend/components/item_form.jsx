@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 
 class ItemForm extends React.Component {
   constructor(props){
@@ -15,8 +16,9 @@ class ItemForm extends React.Component {
   }
 
   fixedHandleSubmit(){
-    debugger
-    this.props.method({user_id: this.props.user_id, body: this.state.body, parent_id: this.props.parent_id, content_type: this.props.content_type });
+    item = {user_id: this.props.user_id, body: this.state.body, parent_id: this.props.parent_id, content_type: this.props.content_type }
+    this.props.method(item);
+    this.props.addItem(item);
   }
 
   render(){

@@ -11,8 +11,7 @@ class Api::ItemsController < ApplicationController
   end
 
   def create
-    debugger
-    Item.create(params[:item])
+    Item.create(item_params)
     render json: {}
   end
 
@@ -26,6 +25,7 @@ class Api::ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:id)
+    params.require(:item).permit(:id, :user_id, :body, :parent_id, :content_type)
   end
+
 end
