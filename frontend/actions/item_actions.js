@@ -8,7 +8,8 @@ export const receiveItemWithDescendents = (response) => {
   return {
     type: RECEIVE_ITEM_WITH_DESCENDENTS,
     items: response.items,
-    likes: response.likes
+    likes: response.likes,
+    users: response.users
   };
 };
 

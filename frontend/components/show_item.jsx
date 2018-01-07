@@ -11,7 +11,7 @@ class ShowItem extends React.Component {
         </section>
         <section className="main">
           <h1 className="body">{this.props.item.body}</h1>
-          <h3 className="username">{this.props.item.user_id}</h3>
+          <h3 className="username">{this.props.user.username}</h3>
           <section className="comment_form">
             <textarea></textarea>
           </section>

@@ -7,6 +7,7 @@ class Api::ItemsController < ApplicationController
   end
 
   def show
+    
     render json: Item.item_payload(params[:id].to_i)
   end
 
