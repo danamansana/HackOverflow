@@ -20,10 +20,12 @@ export const receiveItems = (items) => {
   };
 };
 
-export const receiveItem = (item) => {
+export const receiveItem = (itemPayload) => {
+  
   return {
     type: RECEIVE_ITEM,
-    item
+    item: itemPayload.item,
+    user: itemPayload.user
   };
 };
 
@@ -36,10 +38,10 @@ export const fetchItem = (id) => dispatch => {
 };
 
 export const createItem = (item) => dispatch => {
-  
-  return ItemUtil.createItem(item).then(item => dispatch(receiveItem(item)));
+
+  return ItemUtil.createItem(item).then(itemPayload => dispatch(receiveItem(itemPayload)));
 };
 
 export const updateItem = (item) => dispatch => {
-  return ItemUtil.updateItem(item).then(item => dispatch(receiveItem(item)));
+  return ItemUtil.updateItem(item).then(itemPayload => dispatch(receiveItem(itemPayload)));
 }

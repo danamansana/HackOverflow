@@ -7,18 +7,19 @@ class Api::ItemsController < ApplicationController
   end
 
   def show
-    
+
     render json: Item.item_payload(params[:id].to_i)
   end
 
   def create
     item = Item.create(item_params)
-    render json: item
+    
+    render json: {"item" => item, "user" => {item.id => item.user}}
   end
 
   def update
     item = Item.update(item_params)
-    render json: item
+    render json: {"item" =>item, "user" => {item.id => item.user}}
   end
 
 

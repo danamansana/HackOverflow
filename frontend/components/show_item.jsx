@@ -2,6 +2,7 @@ import React from 'react';
 
 class ShowItem extends React.Component {
   render(){
+    
     return(
       <div className="show_item">
         <section className="sidebar">
