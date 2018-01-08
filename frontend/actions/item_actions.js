@@ -7,7 +7,7 @@ export const RECEIVE_LIKE = "RECEIVE_LIKE";
 
 
 export const receiveLike = (like) => {
-  debugger
+  //debugger
   return {
     type: RECEIVE_LIKE,
     like: like
@@ -31,7 +31,7 @@ export const receiveItems = (items) => {
 };
 
 export const receiveItem = (itemPayload) => {
-
+  //debugger
   return {
     type: RECEIVE_ITEM,
     item: itemPayload.item,
@@ -48,7 +48,7 @@ export const fetchItem = (id) => dispatch => {
 };
 
 export const createItem = (item) => dispatch => {
-
+  //debugger
   return ItemUtil.createItem(item).then(itemPayload => dispatch(receiveItem(itemPayload)));
 };
 

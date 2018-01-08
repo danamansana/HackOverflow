@@ -19,7 +19,7 @@ const mapDispatch = (dispatch, ownProps) => {
   return {
     processForm: (user) => {
       if (ownProps.location.pathname.slice(1) === 'login') {
-        // error: says props is undefined when we call this.props.formtype, debugger says otherwise, fails at dispatch
+        // error: says props is undefined when we call this.props.formtype, //debugger says otherwise, fails at dispatch
         return dispatch(login(user));
       } else {
         return dispatch(signup(user));

@@ -3,7 +3,7 @@ import merge from 'lodash/merge';
 
 
 const likesReducer = (state = [], action) => {
-  debugger
+  //debugger
   switch(action.type){
     case RECEIVE_ITEM_WITH_DESCENDENTS:
       return action.likes;
