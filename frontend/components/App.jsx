@@ -15,7 +15,6 @@ import SessionFormContainer from './session_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
   <div>
-
     <NavContainer/>
     <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />

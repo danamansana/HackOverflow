@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 class SearchBar extends React.Component {
   constructor(props){
@@ -13,9 +14,10 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit(e){
-  
+    // debugger
+    // this.props.history.push('/');
     if (this.state.query !== ""){
-      this.props.history.push(this.state.query.split(" ").join(","))
+      this.props.history.push(`/${this.state.query.split(" ").join(",")}`);
     }
   }
 
