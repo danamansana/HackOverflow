@@ -3,6 +3,16 @@ import * as ItemUtil from "../util/item_util.js";
 export const RECEIVE_ITEMS = "RECEIVE_ITEMS";
 export const RECEIVE_ITEM_WITH_DESCENDENTS = 'RECEIVE_ITEM_WITH_DESCENDENTS';
 export const RECEIVE_ITEM = "RECEIVE_ITEM";
+export const RECEIVE_LIKE = "RECEIVE_LIKE";
+
+
+export const receiveLike = (like) => {
+  debugger
+  return {
+    type: RECEIVE_LIKE,
+    like: like
+  };
+};
 
 export const receiveItemWithDescendents = (response) => {
   return {
@@ -21,7 +31,7 @@ export const receiveItems = (items) => {
 };
 
 export const receiveItem = (itemPayload) => {
-  
+
   return {
     type: RECEIVE_ITEM,
     item: itemPayload.item,
@@ -44,4 +54,8 @@ export const createItem = (item) => dispatch => {
 
 export const updateItem = (item) => dispatch => {
   return ItemUtil.updateItem(item).then(itemPayload => dispatch(receiveItem(itemPayload)));
-}
+};
+
+export const createLike = (like) => dispatch => {
+  return ItemUtil.createLike(like).then(like => dispatch(receiveLike(like)));
+};

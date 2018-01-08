@@ -13,7 +13,7 @@ export const fetchItem = (id) => {
 };
 
 export const createItem = (item) => {
-  
+
   return $.ajax({
     method: "POST",
     url: "api/items",
@@ -26,5 +26,13 @@ export const updateItem = (item) => {
     method: "PATCH",
     url: `/api/items/${item.id}`,
     data: {item}
+  });
+};
+
+export const createLike = (like) => {
+  return $.ajax({
+    method: "POST",
+    url: '/api/likes',
+    data: {like}
   });
 };
