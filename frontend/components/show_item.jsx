@@ -1,13 +1,16 @@
 import React from 'react';
 
 class ShowItem extends React.Component {
+
   render(){
     
+    let likes = Object.values(this.props.likes).filter(like => (like.item_id === this.props.item.id));
+    let likeNumber = likes.reduce((accumulator, currentValue) => (accumulator + currentValue.value), 0);
     return(
       <div className="show_item">
         <section className="sidebar">
           <section className="up_arrow"/>
-          {this.props.item.id}
+          {likeNumber}
           <section className="down_arrow" />
         </section>
         <section className="main">

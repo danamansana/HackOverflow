@@ -3,7 +3,7 @@ import merge from 'lodash/merge';
 
 const usersReducer = (state = {}, action) => {
   let m = merge;
-  debugger
+  
   let x;
   switch(action.type){
     case RECEIVE_ITEM_WITH_DESCENDENTS:

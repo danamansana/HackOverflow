@@ -24,6 +24,6 @@ end
 user_ids = User.all.map {|user| user.id}
 question_ids = Item.all.map {|item| item.id}
 user_ids.each do |id|
-  Like.create(user_id: id, item_id: question_ids.sample)
+  Like.create(user_id: id, item_id: question_ids.sample, value: 1)
   Item.create(user_id: id, body: Faker::Hacker.say_something_smart, parent_id: question_ids.sample, content_type:'answer')
 end
