@@ -23,7 +23,7 @@ class Question extends React.Component{
     let title = (Object.keys(this.props.items).length === 0 ? "" : this.props.items[this.state.ownId].body);
     let user_id = (this.props.currentUser ? this.props.currentUser.id : "");
 
-    //debugger
+  
 
     return(
       <div>

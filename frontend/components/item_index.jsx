@@ -10,7 +10,7 @@ class ItemIndex extends React.Component {
   }
 
   componentDidMount(){
-    
+
     this.props.fetchItems(this.props.match.params.query);
   }
 
@@ -19,7 +19,15 @@ class ItemIndex extends React.Component {
     this.setState({items:nextProps.items});
   }
 
+  componentDidUpdate(prevProps){
+    if(prevProps.match.params.query !== this.props.match.params.query){
+
+      this.props.fetchItems(this.props.match.params.query);
+    }
+  }
+
   render(){
+
     return(
       <ul className= "item_index">
         <div>Top Questions</div>

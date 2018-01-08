@@ -13,14 +13,14 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit(e){
-    debugger
+  
     if (this.state.query !== ""){
       this.props.history.push(this.state.query.split(" ").join(","))
     }
   }
 
   render(){
-    
+
     return(
       <form onSubmit={this.handleSubmit}>
         <textarea value={this.state.query} onChange={this.handleChange}>{this.state.query}</textarea>
