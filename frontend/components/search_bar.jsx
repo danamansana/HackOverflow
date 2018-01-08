@@ -25,8 +25,9 @@ class SearchBar extends React.Component {
 
     return(
       <form onSubmit={this.handleSubmit}>
-        <textarea value={this.state.query} onChange={this.handleChange}>{this.state.query}</textarea>
-        <input type="submit" value="search"></input>
+        <input type="text" value={this.state.query} onChange={this.handleChange}></input>
+
+        <input type="submit" value="search" className="submit"></input>
       </form>
     );
   }

@@ -13,25 +13,26 @@ class Nav extends React.Component {
   }
 
   render() {
-    
+
     if (this.props.currentUser) {
       return (
-        <div className="nav">
-          <h1>{this.props.currentUser.username}</h1>
+        <div className="nav" >
+          <h1><i class="fa fa-stack-overflow" aria-hidden="true"></i><h1 className="hack">hack</h1>Overflow</h1>
+          <Link to="/" className="show_link">Questions</Link>
           <SearchBar updateFilters={this.props.updateFilters} history={this.props.history}/>
-          <button onClick= {this.signout}>LogOut</button>
+          <h1>{this.props.currentUser.username}</h1>
+          <button onClick= {this.signout} className="login_out">LogOut</button>
         </div>
       );
     } else {
       return (
         <div className="nav">
-          <h1>HackOverflow</h1>
-          <div className="button">
+          <h1><i class="fa fa-stack-overflow" aria-hidden="true"></i><h1 className="hack">hack</h1>Overflow</h1>
+          <Link to="/" className="show_link">Questions</Link>
             <SearchBar updateFilters={this.props.updateFilters} history={this.props.history} />
 
-            <Link to= '/signup' className="link">Sign Up</Link>
-            <Link to= '/login'>Log In</Link>
-          </div>
+            <Link to= '/login' className="login_out">Log In</Link>
+            <Link to= '/signup' className="signup">Sign Up</Link>
         </div>);
     }
 
