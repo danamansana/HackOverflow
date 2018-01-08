@@ -1,5 +1,5 @@
 export const fetchQuestions = (query) => {
-  debugger
+
   return $.ajax({
     method: "GET",
     url: "/api/items",

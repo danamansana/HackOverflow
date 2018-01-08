@@ -10,7 +10,7 @@ class ItemIndex extends React.Component {
   }
 
   componentDidMount(){
-    debugger
+    
     this.props.fetchItems(this.props.match.params.query);
   }
 

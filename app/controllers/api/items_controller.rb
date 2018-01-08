@@ -2,7 +2,7 @@ class Api::ItemsController < ApplicationController
   def index
     # items = Item.all
     # render json: items
-    debugger
+    
     if (params[:query])
       @items = Item.where(content_type: nil).where("body ~* ?", params[:query].split(",").join("|"))
     else

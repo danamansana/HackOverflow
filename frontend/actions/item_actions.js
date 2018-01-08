@@ -41,7 +41,7 @@ export const receiveItem = (itemPayload) => {
 
 export const fetchItems = (query) => dispatch => {
   let x = query;
-  debugger
+  
   return ItemUtil.fetchQuestions(query).then(items => dispatch(receiveItems(items)));
 };
 
