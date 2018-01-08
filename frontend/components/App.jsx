@@ -22,6 +22,7 @@ const App = () => (
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <Route exact path="/" component={ItemsIndexContainer} />
       <Route path={`/question/:question_id`} component={QuestionContainer}/>
+      <Route exact path={`/:query`} component={ItemsIndexContainer} />
     </Switch>
   </div>
 );

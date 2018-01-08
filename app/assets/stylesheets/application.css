@@ -58,6 +58,10 @@ form label{
 .nav .link {
   margin-right: 10px;
 }
+
+.item_index_item.dont_display {
+  display: none;
+}
 .session_form .button {
   background-color: rgb(0, 119, 204);
   font-size: 13px;

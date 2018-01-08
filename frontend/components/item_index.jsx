@@ -10,7 +10,8 @@ class ItemIndex extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchItems();
+    debugger
+    this.props.fetchItems(this.props.match.params.query);
   }
 
   componentWillReceiveProps(nextProps){
@@ -22,7 +23,7 @@ class ItemIndex extends React.Component {
     return(
       <ul className= "item_index">
         <div>Top Questions</div>
-        {Object.values(this.state.items).map(item => <ItemIndexItem item={item}/>)}
+        {Object.values(this.state.items).map(item => <ItemIndexItem item={item} filters = {this.props.filters}/>)}
       </ul>
     );
   }

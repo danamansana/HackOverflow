@@ -1,10 +1,18 @@
-export const fetchQuestions = () => {
+export const fetchQuestions = (query) => {
+  debugger
   return $.ajax({
     method: "GET",
-    url: "/api/items"
+    url: "/api/items",
+    data: {query}
   });
 };
-
+export const search = (terms) => {
+  return $.ajax({
+  method: "GET",
+  url: "/api/items",
+  data: {terms}
+  });
+};
 export const fetchItem = (id) => {
   return $.ajax({
     method: "GET",

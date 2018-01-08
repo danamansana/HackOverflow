@@ -6,14 +6,15 @@ import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    items: state.items
+    items: state.items,
+    filters: state.filters
   };
 };
 
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    fetchItems: () => dispatch(fetchItems())
+    fetchItems: (query) => dispatch(fetchItems(query))
   };
 };
 

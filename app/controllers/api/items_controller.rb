@@ -2,7 +2,12 @@ class Api::ItemsController < ApplicationController
   def index
     # items = Item.all
     # render json: items
-    @items = Item.where(content_type: nil).includes(:likes, :children)
+    debugger
+    if (params[:query])
+      @items = Item.where(content_type: nil).where("body ~* ?", params[:query].split(",").join("|"))
+    else
+      @items = Item.where(content_type: nil).includes(:likes, :children)
+    end
     render :index
   end
 
@@ -13,7 +18,7 @@ class Api::ItemsController < ApplicationController
 
   def create
     item = Item.create(item_params)
-    
+
     render json: {"item" => item, "user" => {item.id => item.user}}
   end
 

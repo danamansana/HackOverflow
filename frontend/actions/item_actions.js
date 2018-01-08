@@ -39,8 +39,10 @@ export const receiveItem = (itemPayload) => {
   };
 };
 
-export const fetchItems = () => dispatch => {
-  return ItemUtil.fetchQuestions().then(items => dispatch(receiveItems(items)));
+export const fetchItems = (query) => dispatch => {
+  let x = query;
+  debugger
+  return ItemUtil.fetchQuestions(query).then(items => dispatch(receiveItems(items)));
 };
 
 export const fetchItem = (id) => dispatch => {
@@ -58,4 +60,8 @@ export const updateItem = (item) => dispatch => {
 
 export const createLike = (like) => dispatch => {
   return ItemUtil.createLike(like).then(like => dispatch(receiveLike(like)));
+};
+
+export const search = (terms) => dispatch => {
+  return Item.Util.search(terms).then(items => dispatch(receiveItems(items)));
 };
