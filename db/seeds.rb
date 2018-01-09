@@ -14,7 +14,8 @@ i=0
 100.times do
   begin
     user = User.create!(username: Faker::Science.scientist, password: "password")
-    item = Item.create!(user_id: user.id, body: "How to #{Faker::Hacker.verb} the #{Faker::Hacker.noun}?")
+    question = "How to #{Faker::Hacker.verb} the #{Faker::Hacker.noun}?"
+    item = Item.create!(user_id: user.id, body: question, title: question)
   rescue
     retry
   end

@@ -3,6 +3,7 @@ import NavContainer from './nav_container';
 import Question from './question';
 import QuestionContainer from './question_container';
 import ItemsIndexContainer from './item_index_container';
+import QuestionFormContainer from './question_form_container';
 import { Provider } from 'react-redux';
 import {
   Route,
@@ -21,6 +22,7 @@ const App = () => (
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <Route exact path="/" component={ItemsIndexContainer} />
       <Route path={`/question/:question_id`} component={QuestionContainer}/>
+      <Route path={"/ask"} component={QuestionFormContainer} />
       <Route exact path={`/:query`} component={ItemsIndexContainer} />
     </Switch>
   </div>

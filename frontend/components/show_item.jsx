@@ -1,4 +1,5 @@
 import React from 'react';
+import ItemForm from './item_form';
 
 class ShowItem extends React.Component {
   constructor(props){
@@ -28,6 +29,9 @@ class ShowItem extends React.Component {
         <section className="main">
           <h1 className="body">{this.props.item.body}</h1>
           <h3 className="username">{this.props.user.username}</h3>
+          <section className = "update_form">
+
+          </section>
           <section className="comment_form">
             <textarea></textarea>
           </section>
