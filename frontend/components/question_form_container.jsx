@@ -7,7 +7,7 @@ import { withRouter } from 'react-router';
 
 const mapStateToProps = (state) => {
   return {
-    user_id: state.session.currentUser.id
+    userId: state.session.currentUser.id
   };
 };
 

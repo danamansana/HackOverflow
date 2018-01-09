@@ -9,13 +9,14 @@ class Item < ApplicationRecord
 
   def self.descendents(id, hash)
     return [] unless hash[id]
+    #return [] if Item.find_by(id: id).parent_id == id
     hash[id].map {|child| descendents(child.id.to_i, hash)}.flatten.concat(hash[id])
   end
 
   def self.item_payload(own_id)
     item_hash = Item.item_hasher
     top_item = item_hash[nil].select {|item| item.id == own_id}[0]
-    
+
     items = Item.descendents(own_id, item_hash)
     likes = items.map {|item| item.likes}.flatten.concat(top_item.likes)
     users = {}

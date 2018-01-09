@@ -2,12 +2,14 @@ class Api::ItemsController < ApplicationController
   def index
     # items = Item.all
     # render json: items
-    
+
     if (params[:query])
       @items = Item.where(content_type: nil).where("body ~* ?", params[:query].split(",").join("|"))
     else
       @items = Item.where(content_type: nil).includes(:likes, :children)
     end
+
+    debugger
     render :index
   end
 
@@ -23,7 +25,9 @@ class Api::ItemsController < ApplicationController
   end
 
   def update
-    item = Item.update(item_params)
+    debugger
+    item = Item.find(params[:id])
+    item.update(item_params)
     render json: {"item" =>item, "user" => {item.id => item.user}}
   end
 
