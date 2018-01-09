@@ -23,7 +23,6 @@ class Api::ItemsController < ApplicationController
   end
 
   def update
-    debugger
     item = Item.find(params[:id])
     item.update(item_params)
     render json: {"item" =>item, "user" => {item.id => item.user}}

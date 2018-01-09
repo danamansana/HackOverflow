@@ -22,7 +22,6 @@ class Question extends React.Component{
   render(){
     let title = (Object.keys(this.props.items).length === 0 ? "" : this.props.items[this.state.ownId].title);
     let userId = (this.props.currentUser ? this.props.currentUser.id : "");
-
     return(
       <div>
         <h1 className = "title">{title}</h1>

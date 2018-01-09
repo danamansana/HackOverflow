@@ -15,7 +15,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (state) => {
   return {
     method: (item) => dispatch(createItem(item)),
-    redirect: (component, id) => (component.props.history.push(`/question/${id}`))
+    redirect: true
   };
 };
 
