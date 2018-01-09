@@ -42,7 +42,7 @@ class ShowItem extends React.Component {
           <h1 className="body">{this.props.item.body}</h1>
           <h3 className="username">{this.props.user.username}</h3>
           <section className = "update_form">
-            <ItemForm userId={this.props.user.id} body={this.props.item.body} content_type={this.props.item.content_type}
+            <ItemForm userId={this.props.user.id} body={this.props.item.body} title={this.props.item.title} content_type={this.props.item.content_type}
               parent_id={this.props.item.parent_id} method={this.props.updateItem} id={this.props.item.id}/>
           </section>
           <section className="comment_form">
