@@ -49,7 +49,7 @@ export const fetchItem = (id) => dispatch => {
 };
 
 export const createItem = (item) => dispatch => {
-  
+
   return ItemUtil.createItem(item).then(itemPayload => dispatch(receiveItem(itemPayload)));
 };
 
@@ -62,5 +62,9 @@ export const createLike = (like) => dispatch => {
 };
 
 export const search = (terms) => dispatch => {
-  return Item.Util.search(terms).then(items => dispatch(receiveItems(items)));
+  return ItemUtil.search(terms).then(items => dispatch(receiveItems(items)));
+};
+
+export const deleteItem = (id) => dispatch => {
+  return ItemUtil.deleteItem(id);
 };

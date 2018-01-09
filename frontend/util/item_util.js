@@ -44,3 +44,10 @@ export const createLike = (like) => {
     data: {like}
   });
 };
+
+export const deleteItem = (id) => {
+  return $.ajax({
+    method: "DELETE",
+    url: `/api/items/${id}`
+  });
+};

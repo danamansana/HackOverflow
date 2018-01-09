@@ -31,6 +31,12 @@ class Api::ItemsController < ApplicationController
     render json: {"item" =>item, "user" => {item.id => item.user}}
   end
 
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    render json: {}
+  end
+
 
 
   private

@@ -5,6 +5,10 @@ class ShowItem extends React.Component {
   constructor(props){
     super(props);
     this.handleLike = this.handleLike.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.state = {
+      className: "show_item"
+    };
   }
 
   handleLike(value){
@@ -14,13 +18,18 @@ class ShowItem extends React.Component {
       };
     }
   }
+
+  handleDelete(){
+    this.props.deleteItem(this.props.item.id);
+    this.setState({className: "hide"});
+  }
   render(){
 
     let likes = Object.values(this.props.likes).filter(like => (like.item_id === this.props.item.id));
     let likeNumber = likes.reduce((accumulator, currentValue) => (accumulator + currentValue.value), 0);
-    debugger
+
     return(
-      <div className="show_item">
+      <div className={this.state.className}>
         <section className="sidebar">
           <section className="up_arrow" onClick = {this.handleLike(1)}/>
           {likeNumber}
@@ -36,6 +45,7 @@ class ShowItem extends React.Component {
           <section className="comment_form">
             <textarea></textarea>
           </section>
+          <button onClick={this.handleDelete} value="Delete">Delete</button>
         </section>
 
       </div>

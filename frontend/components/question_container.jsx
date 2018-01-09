@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Question from './question';
 import { withRouter } from 'react-router';
-import { fetchItem, createItem, updateItem, createLike } from '../actions/item_actions';
+import { fetchItem, createItem, updateItem, createLike, deleteItem } from '../actions/item_actions';
 
 const mapStateToProps = (state, ownProps) => {
 
@@ -19,7 +19,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchItem: () => dispatch(fetchItem(ownProps.match.params.question_id)),
     createItem: (item) => dispatch(createItem(item)),
     updateItem: (item) => dispatch(updateItem(item)),
-    createLike: (like) => dispatch(createLike(like))
+    createLike: (like) => dispatch(createLike(like)),
+    deleteItem: (id) => dispatch(deleteItem(id))
   };
 };
 
