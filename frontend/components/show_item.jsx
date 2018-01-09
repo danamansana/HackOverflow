@@ -22,9 +22,12 @@ class ShowItem extends React.Component {
   handleDelete(){
     this.props.deleteItem(this.props.item.id);
     this.setState({className: "hide"});
+    if(this.props.item.content_type === "question"){
+      this.props.history.push("/");
+    }
   }
   render(){
-
+    debugger
     let likes = Object.values(this.props.likes).filter(like => (like.item_id === this.props.item.id));
     let likeNumber = likes.reduce((accumulator, currentValue) => (accumulator + currentValue.value), 0);
 

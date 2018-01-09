@@ -28,7 +28,9 @@ class Question extends React.Component{
         <h1 className = "title">{title}</h1>
         <h1 className = "question">
         {Object.values(this.props.items).filter(item => (item.content_type === "question")).map(item => <ShowItem item={item} user={this.props.users[item.id]}
-          likes={this.props.likes} createLike={this.props.createLike} currentUser={this.props.currentUser} updateItem={this.props.updateItem} deleteItem={this.props.deleteItem}/>)}
+          likes={this.props.likes} createLike={this.props.createLike} currentUser={this.props.currentUser}
+          updateItem={this.props.updateItem} deleteItem={this.props.deleteItem}
+          history={this.props.history}/>)}
         </h1>
         <section className="answer_box">
           <h2>Answers</h2>

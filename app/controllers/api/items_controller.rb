@@ -8,8 +8,6 @@ class Api::ItemsController < ApplicationController
     else
       @items = Item.where(content_type: "question").includes(:likes, :children)
     end
-
-    debugger
     render :index
   end
 
