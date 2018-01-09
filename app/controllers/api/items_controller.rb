@@ -4,9 +4,9 @@ class Api::ItemsController < ApplicationController
     # render json: items
 
     if (params[:query])
-      @items = Item.where(content_type: nil).where("body ~* ?", params[:query].split(",").join("|"))
+      @items = Item.where(content_type: "question").where("body ~* ?", params[:query].split(",").join("|"))
     else
-      @items = Item.where(content_type: nil).includes(:likes, :children)
+      @items = Item.where(content_type: "question").includes(:likes, :children)
     end
 
     debugger

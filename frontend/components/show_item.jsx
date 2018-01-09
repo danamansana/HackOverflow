@@ -19,7 +19,6 @@ class ShowItem extends React.Component {
     let likes = Object.values(this.props.likes).filter(like => (like.item_id === this.props.item.id));
     let likeNumber = likes.reduce((accumulator, currentValue) => (accumulator + currentValue.value), 0);
     debugger
-
     return(
       <div className="show_item">
         <section className="sidebar">

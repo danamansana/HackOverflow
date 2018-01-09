@@ -18,11 +18,9 @@ class ItemForm extends React.Component {
 
   fixedHandleSubmit(){
     //why is the action returned from this.props.method?
-    debugger
-
     let item = {title: this.state.title, user_id: this.props.userId, body: this.state.body, parent_id: this.props.parent_id, content_type: this.props.content_type };
     if(this.props.id){item.id = this.props.id;}
-    debugger
+  
     let comp = this;
     this.props.method(item)
     .then(
@@ -35,7 +33,6 @@ class ItemForm extends React.Component {
 
 
   render(){
-  debugger
   return (
     <form onSubmit={this.fixedHandleSubmit}>
     <input type="text" value={this.state.title} onChange={this.handleChange("title")}></input>
