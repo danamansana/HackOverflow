@@ -81,8 +81,29 @@
 }
 
 .show_item .update_form{
-  position: absolute;
+  position: relative;
   z-index: 2;
+
+}
+
+.show_item .update_form form{
+  display: flex;
+  flex-direction: column;
+}
+
+.show_item .update_form input {
+  width: 800px;
+  font-size: 15px;
+}
+
+.show_item .update_form textarea{
+  height: 300px;
+  width: 900px;
+  font-size: 15px;
+}
+
+.show_item .update_form .submit {
+
 }
 
 .show_item .deleteButton{
