@@ -15,7 +15,7 @@ class ItemIndexItem extends React.Component {
         </div>
         <div className="questionMain">
           <Link to={`question/${this.props.item.id}`}>
-            <h1>{this.props.item.body}</h1>
+            <h1>{this.props.item.title}</h1>
           </Link>
           <h2>asked <br/><div className="item_author">{this.props.item.author}</div></h2>
         </div>

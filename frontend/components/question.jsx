@@ -38,6 +38,7 @@ class Question extends React.Component{
                currentUser={this.props.currentUser} updateItem={this.props.updateItem} deleteItem={this.props.deleteItem}/>)}
           </ul>
           <section className="answerForm">
+          <h1>Your Answer</h1>
           <ItemForm userId={userId} body={""} content_type="answer" parent_id={this.state.ownId} method={this.props.createItem} addItem={this.addItem}/>
           </section>
         </section>
