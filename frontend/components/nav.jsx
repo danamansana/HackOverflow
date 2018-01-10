@@ -21,7 +21,7 @@ class Nav extends React.Component {
           <Link to="/" className="show_link">Questions</Link>
           <SearchBar updateFilters={this.props.updateFilters} history={this.props.history}/>
           <h1>{this.props.currentUser.username}</h1>
-          <Link to={"/ask"}>Ask Question</Link>
+          <Link to={"/ask"} className="ask">Ask Question</Link>
           <button onClick= {this.signout} className="login_out">LogOut</button>
         </div>
       );

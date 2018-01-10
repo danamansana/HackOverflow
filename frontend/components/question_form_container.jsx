@@ -9,6 +9,7 @@ const mapStateToProps = (state) => {
   return {
     userId: state.session.currentUser.id,
     content_type: "question",
+    className: "ask"
   };
 };
 

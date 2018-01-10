@@ -33,7 +33,9 @@ class SessionForm extends React.Component {
     this.props.processForm.bind(this)(user);
   }
 
+
   render () {
+    let formButtonText = (this.props.formType === "login" ? "Log In" : "Sign Up");
 
     //let errorClassName = (this.props.errorsVisible ? "errorClass" : "");
     let errorClassName = (type) => {
@@ -58,7 +60,7 @@ class SessionForm extends React.Component {
           </div>
           <input type="password" onChange={this.changeInput("password")} value={this.state.password}></input>
           <div className="buttoncontainer">
-            <input className="button" type="submit" value={this.props.formType}></input>
+            <input className="button" type="submit" value={formButtonText}></input>
           </div>
           <h1 className={errorClassName(displayErrors)} id="nameErrors">{displayErrors}
           </h1>

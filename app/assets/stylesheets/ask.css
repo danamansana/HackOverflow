@@ -1,0 +1,30 @@
+.ask {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.ask form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 400px;
+  width: 700px;
+}
+
+.ask form textarea {
+  height: 300px;
+}
+
+.ask form .submit {
+  height: 33px;
+  width: 145px;
+  color: white;
+  border-radius: 3px;
+  background-color: rgb(0,149, 255);
+  font-size: 15px;
+  font-style: Arial, Helvetica, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+}

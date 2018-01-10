@@ -38,13 +38,15 @@ class ItemForm extends React.Component {
 
 
   render(){
-    
+
   return (
-    <form onSubmit={this.fixedHandleSubmit}>
-    <input type="text" value={this.state.title} onChange={this.handleChange("title")}></input>
-    <textarea value={this.state.body} onChange={this.handleChange("body")}>{this.state.body}</textarea>
-    <input type="submit" value="post"></input>
-    </form>);
+    <div className={this.props.className}>
+      <form onSubmit={this.fixedHandleSubmit} >
+        <input type="text" value={this.state.title} onChange={this.handleChange("title")}></input>
+        <textarea value={this.state.body} onChange={this.handleChange("body")}>{this.state.body}</textarea>
+        <input type="submit" value="Post" className="submit"></input>
+      </form>
+    </div>);
 
   }
 }
