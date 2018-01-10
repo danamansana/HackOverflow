@@ -65,7 +65,7 @@ class ShowItem extends React.Component {
     let commentFormDisplay = {true: "comment_form", false: "hide"};
     let commentModalDisplay = {true: "commentModal", false: "hide"};
     return(
-      <div className={this.state.className}>
+      <div className={this.state.className} id={this.props.top ? "top" : ""}>
         <section className="sidebar">
           <section className="up_arrow" onClick = {this.handleLike(1)}/>
           {likeNumber}
