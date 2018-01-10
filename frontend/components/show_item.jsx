@@ -17,17 +17,25 @@ class ShowItem extends React.Component {
 
 
 
-
+  componentWillReceiveProps(){
+    this.setState({
+      className: "show_item",
+      bodydisplay: true,
+      commentDisplay: false
+    });
+  }
 
   handleLike(value){
     if(this.props.currentUser){
       return (e) => {
+        e.preventDefault();
         this.props.createLike({item_id: this.props.item.id, user_id: this.props.currentUser.id, value: value});
       };
     }
   }
 
-  handleDelete(){
+  handleDelete(e){
+    e.preventDefault();
     this.props.deleteItem(this.props.item.id);
     this.setState({className: "hide"});
     if(this.props.item.content_type === "question"){
@@ -36,7 +44,7 @@ class ShowItem extends React.Component {
   }
 
   toggleBody(){
-    
+
     this.setState({bodydisplay: !this.state.bodydisplay});
   }
   toggleComment(){

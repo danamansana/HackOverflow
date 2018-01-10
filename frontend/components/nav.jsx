@@ -9,6 +9,7 @@ class Nav extends React.Component {
   }
 
   signout(e) {
+    e.preventDefault();
     this.props.logout();
   }
 
