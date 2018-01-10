@@ -36,6 +36,7 @@ class ShowItem extends React.Component {
   }
 
   toggleBody(){
+    
     this.setState({bodydisplay: !this.state.bodydisplay});
   }
   toggleComment(){
@@ -47,8 +48,10 @@ class ShowItem extends React.Component {
     let bodydisplay = {true: "body", false: "hide"};
     let updatedisplay = {false: "update_form", true: "hide"};
     let deleteDisplay = {false: "deleteButton", true: "hide"};
+    let bodyModalDisplay = {true: "hide", false: "bodyModal"};
     let commentButtonDisplay = {false: "comment_button", true: "hide"};
     let commentFormDisplay = {true: "comment_form", false: "hide"};
+    let commentModalDisplay = {true: "commentModal", false: "hide"};
     return(
       <div className={this.state.className}>
         <section className="sidebar">
@@ -63,11 +66,13 @@ class ShowItem extends React.Component {
               parent_id={this.props.item.parent_id} method={this.props.updateItem} id={this.props.item.id}/>
           </section>
           <button onClick={this.handleDelete} value="Delete" className={deleteDisplay[this.state.bodydisplay]}>Delete</button>
+          <div className={bodyModalDisplay[this.state.bodydisplay]} onClick={this.toggleBody}/>
           <h3 className="username">{this.props.user.username}</h3>
           <section className={commentFormDisplay[this.state.commentDisplay]}>
             <textarea></textarea>
           </section>
           <h2 className={commentButtonDisplay[this.state.commentDisplay] } onClick={this.toggleComment}>add a comment</h2>
+          <div className={commentModalDisplay[this.state.commentDisplay]} onClick={this.toggleComment}/>
         </section>
 
       </div>

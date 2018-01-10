@@ -67,6 +67,7 @@
 
 .show_item .main {
   width: 80%;
+  position: relative;
 }
 .show_item .main h1 {
   font-weight: 400;
@@ -77,4 +78,33 @@
   justify-content: flex-end;
   color: rgb(0, 119, 204);
   font-size: 13px;
+}
+
+.show_item .update_form{
+  position: absolute;
+  z-index: 2;
+}
+
+.show_item .deleteButton{
+  position: absolute;
+  z-index: 2;
+}
+
+.bodyModal {
+  position: absolute;
+  z-index: 1;
+  height:100%;
+  width: 100%;
+}
+
+.commentModal {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.comment_form{
+  position: absolute;
+  z-index: 2;
 }
