@@ -25,8 +25,12 @@ class ShowItem extends React.Component {
     });
   }
 
+  likes(user){
+    return Object.values(this.props.likes).filter(like => (like.item_id === this.props.item.id && like.user_id === user.id)).reduce((accumulator, currentValue) => (accumulator + currentValue.value), 0);
+  }
+
   handleLike(value){
-    if(this.props.currentUser){
+    if(this.props.currentUser && this.likes(this.props.currentUser)*value <=0){
       return (e) => {
         e.preventDefault();
         this.props.createLike({item_id: this.props.item.id, user_id: this.props.currentUser.id, value: value});
