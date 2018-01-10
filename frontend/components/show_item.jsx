@@ -83,6 +83,10 @@ class ShowItem extends React.Component {
           <section className={commentFormDisplay[this.state.commentDisplay]}>
             <textarea></textarea>
           </section>
+          <ul className="commentList">
+            {Object.values(this.props.items).filter(item => (item.content_type === "comment" && item.parent_id === this.props.item.id )).map(comment => <ShowItem item={comment} user={this.props.users[comment.id]} likes={this.props.likes} createLike={this.props.createLike}
+               currentUser={this.props.currentUser} updateItem={this.props.updateItem} deleteItem={this.props.deleteItem}/>)}
+          </ul>
           <h2 className={commentButtonDisplay[this.state.commentDisplay] } onClick={this.toggleComment}>add a comment</h2>
           <div className={commentModalDisplay[this.state.commentDisplay]} onClick={this.toggleComment}/>
         </section>

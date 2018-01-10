@@ -29,11 +29,10 @@ class ItemForm extends React.Component {
     if(this.props.id){item.id = this.props.id;}
     let comp = this;
     let errors = {"title": false, "body": false};
-    debugger
     if(item.body.match(/\S+/) === null){
       errors.body = true;
     }
-    if(item.content_type === "question" && item.title.match(/S+/) === null){
+    if(item.content_type === "question" && item.title.match(/\S+/) === null){
       errors.title = true;
     }
     if(errors.body || errors.title){

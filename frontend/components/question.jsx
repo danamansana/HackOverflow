@@ -29,13 +29,13 @@ class Question extends React.Component{
         {Object.values(this.props.items).filter(item => (item.content_type === "question")).map(item => <ShowItem item={item} user={this.props.users[item.id]}
           likes={this.props.likes} createLike={this.props.createLike} currentUser={this.props.currentUser}
           updateItem={this.props.updateItem} deleteItem={this.props.deleteItem}
-          history={this.props.history}/>)}
+          history={this.props.history} items={this.props.items}/>)}
         </h1>
         <section className="answer_box">
           <h2>Answers</h2>
           <ul>
             {Object.values(this.props.items).filter(item => (item.content_type === "answer")).map(item => <ShowItem item={item} user={this.props.users[item.id]} likes={this.props.likes} createLike={this.props.createLike}
-               currentUser={this.props.currentUser} updateItem={this.props.updateItem} deleteItem={this.props.deleteItem}/>)}
+               currentUser={this.props.currentUser} updateItem={this.props.updateItem} deleteItem={this.props.deleteItem} items={this.props.items}/>)}
           </ul>
           <section className="answerForm">
           <h1>Your Answer</h1>
