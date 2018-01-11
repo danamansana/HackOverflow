@@ -30,7 +30,7 @@ class ShowItem extends React.Component {
   }
 
   handleLike(value){
-    if(this.props.currentUser && this.likes(this.props.currentUser)*value <=0){
+    if(this.props.currentUser && this.likes(this.props.currentUser)*value <=0 && this.props.currentUser.id !== this.props.item.user_id ){
       return (e) => {
         e.preventDefault();
         this.props.createLike({item_id: this.props.item.id, user_id: this.props.currentUser.id, value: value});

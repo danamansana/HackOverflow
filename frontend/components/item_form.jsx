@@ -35,7 +35,7 @@ class ItemForm extends React.Component {
     if(item.content_type === "question" && item.title.match(/\S+/) === null){
       errors.title = true;
     }
-    if(errors.body || errors.title){
+    if(errors.body || errors.title || item.user_id === ""){
       this.setState({bodyErrors: errors.body, titleErrors: errors.title});
       return 0;
     }
@@ -51,7 +51,6 @@ class ItemForm extends React.Component {
 
 
   render(){
-    debugger
   let bodyErrorClass = {true: "bodyError", false: "hide"};
   let titleErrorClass = {true: "titleError", false: "hide"};
   return (
