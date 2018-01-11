@@ -10,6 +10,7 @@ class Nav extends React.Component {
 
   signout(e) {
     e.preventDefault();
+    this.props.history.push("/");
     this.props.logout();
   }
 
@@ -46,7 +47,7 @@ class Nav extends React.Component {
 
               <Link to= '/login' className="login_out">Log In</Link>
             </div>
-            
+
               <Link to= '/signup' className="signup">Sign Up</Link>
         </div>);
     }
