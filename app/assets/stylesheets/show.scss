@@ -120,7 +120,7 @@
 }
 
 .show_item .deleteButton{
-  position: absolute;
+  position: relative;
   z-index: 2;
 }
 
@@ -146,7 +146,7 @@
 }
 
 .comment_form{
-  position: absolute;
+  position: relative;
   z-index: 2;
 }
 
@@ -191,6 +191,25 @@
 }
 
 .update_form .comment form .submit{
+  display:flex;
+}
+
+.comment_form .comment form label{
+  display: none;
+}
+.comment_form .comment form h1{
+  display: none;
+}
+.comment_form .comment form input{
+  display: none;
+}
+
+.comment_form .comment form textarea{
+  height: fit-content;
+  min-height: 18px;
+}
+
+.comment_form .comment form .submit{
   display:flex;
 }
 .answerForm form {
@@ -264,6 +283,10 @@
 }
 
 .show_item .update_form form .submit {
+  width: 50px;
+}
+
+.comment_form form .submit {
   width: 50px;
 }
 
