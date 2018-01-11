@@ -11,7 +11,8 @@ class ShowItem extends React.Component {
     this.state = {
       className: "show_item",
       bodydisplay: true,
-      commentDisplay: false
+      commentDisplay: false,
+      comment: this.props.comment || ""
     };
   }
 
@@ -69,37 +70,47 @@ class ShowItem extends React.Component {
     let commentModalDisplay = {true: "commentModal", false: "hide"};
 
     return(
-      <div className={this.state.className} id={this.props.top ? "top" : ""}>
+      <div className={(this.props.top ? "item_wrapper top" : "item_wrapper")} id={this.state.comment}>
+      <div className={this.state.className}  >
         <section className="sidebar">
+          <div className="sidebar_wrapper">
           <section className="up_arrow" onClick = {this.handleLike(1)}/>
           {likeNumber}
           <section className="down_arrow" onClick = {this.handleLike(-1)}/>
+        </div>
         </section>
+        <div className="commentsANDmain">
         <section className="main">
           <h1 className={bodydisplay[this.state.bodydisplay]} onClick={this.toggleBody}>{this.props.item.body}</h1>
           <section className = {updatedisplay[this.state.bodydisplay]}>
             <ItemForm userId={this.props.user.id} body={this.props.item.body} title={this.props.item.title} content_type={this.props.item.content_type}
                className={this.props.item.content_type}
               parent_id={this.props.item.parent_id} method={this.props.updateItem} id={this.props.item.id}/>
+              <button onClick={this.handleDelete} value="Delete" className={deleteDisplay[this.state.bodydisplay]}>Delete</button>
           </section>
-          <button onClick={this.handleDelete} value="Delete" className={deleteDisplay[this.state.bodydisplay]}>Delete</button>
           <div className={bodyModalDisplay[this.state.bodydisplay]} onClick={this.toggleBody}/>
           <h3 className="username">{this.props.user.username}</h3>
-          <ul className="commentList">
-            {Object.values(this.props.items).filter(item => (item.content_type === "comment" && item.parent_id === this.props.item.id )).map(comment =>
-              <ShowItem item={comment} items={this.props.items}
-               user={this.props.users[comment.id]} likes={this.props.likes} createLike={this.props.createLike}
-               currentUser={this.props.currentUser} updateItem={this.props.updateItem} deleteItem={this.props.deleteItem}/>)}
-          </ul>
-          <h2 className={commentButtonDisplay[this.state.commentDisplay] } onClick={this.toggleComment}>add a comment</h2>
-          <div className={commentModalDisplay[this.state.commentDisplay]} onClick={this.toggleComment}/>
-          <section className={commentFormDisplay[this.state.commentDisplay]}>
-            <ItemForm userId={this.props.currentUser ? this.props.currentUser.id : ""} body="" content_type="comment"
-              parent_id={this.props.item.id} className="comment" method={this.props.createItem}/>
-          </section>
         </section>
 
+        <section className="comments">
+
+          <ul className="commentList">
+            {Object.values(this.props.items).filter(item => (item.content_type === "comment" && item.parent_id === this.props.item.id )).map(comment =>
+              <ShowItem item={comment} items={this.props.items} comment="comment"
+                user={this.props.users[comment.id]} likes={this.props.likes} createLike={this.props.createLike}
+                currentUser={this.props.currentUser} updateItem={this.props.updateItem} deleteItem={this.props.deleteItem}/>)}
+              </ul>
+              <h2 className={commentButtonDisplay[this.state.commentDisplay] } onClick={this.toggleComment}>add a comment</h2>
+              <div className={commentModalDisplay[this.state.commentDisplay]} onClick={this.toggleComment}/>
+              <section className={commentFormDisplay[this.state.commentDisplay]}>
+                <ItemForm userId={this.props.currentUser ? this.props.currentUser.id : ""} body="" content_type="comment"
+                  parent_id={this.props.item.id} className="comment" method={this.props.createItem}/>
+                </section>
+
+              </section>
+            </div>
       </div>
+    </div>
 
     );
   }

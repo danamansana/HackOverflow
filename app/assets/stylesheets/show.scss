@@ -25,12 +25,24 @@
 
 }
 
+.item_wrapper{
+  border-bottom: 1px solid #e4e6e8;
+}
+
 .show_item {
   display: flex;
-  border-bottom: 1px solid #e4e6e8;
   color: rgb(36, 39, 41);
 
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.show_item .sidebar_wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 15%;
+  height: 100px;
 }
 
 .show_item .sidebar {
@@ -66,8 +78,9 @@
 }
 
 .show_item .main {
-  width: 80%;
+  width: 100%;
   position: relative;
+  border-bottom: 1px solid #e4e6e8;
 }
 .show_item .main h1 {
   font-weight: 400;
@@ -120,6 +133,9 @@
   left: 0;
 }
 
+.comment_sidebar{
+  width: 20%;
+}
 .commentModal {
   position: fixed;
   z-index: 1;
@@ -139,8 +155,44 @@
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 13px;
   font-weight: 400;
+
 }
 
+.update_form .answer form label{
+  display: none;
+}
+.update_form .answer form h1{
+  display: none;
+}
+.update_form .answer form input{
+  display: none;
+}
+
+.update_form .answer form textarea{
+  height: fit-content;
+}
+
+.update_form .answer form .submit{
+  display:flex;
+}
+
+.update_form .comment form label{
+  display: none;
+}
+.update_form .comment form h1{
+  display: none;
+}
+.update_form .comment form input{
+  display: none;
+}
+
+.update_form .comment form textarea{
+  height: fit-content;
+}
+
+.update_form .comment form .submit{
+  display:flex;
+}
 .answerForm form {
   display: flex;
   flex-direction: column;
@@ -185,23 +237,73 @@
   border: none;
 }
 
-.answer_box .titleError {
+
+.titleError {
   color: white;
-  background-color: red;
+  background-color: #C04848;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 400;
   border: none;
+  height: 20px;
+  width: fit-content;
+  padding: 2px;
+  border-radius: 3px;
 }
-.answer_box .bodyError {
+.bodyError {
   color: white;
-  background-color: red;
+  background-color: #C04848;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 400;
+  height: 20px;
+  width: fit-content;
   border: none;
+  padding: 2px;
+  border-radius: 3px;
 }
 
-#top {
+.show_item .update_form form .submit {
+  width: 50px;
+}
+
+.commentsANDmain{
+  width: 85%;
+}
+.top {
   border-bottom: none;
+}
+
+#comment{
+  border-bottom: none;
+}
+
+#comment .sidebar {
+  flex-direction: row;
+
+}
+
+#comment .main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#comment .comment_button{
+  display: none;
+}
+
+#comment .show_item .commments{
+  display: none;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+#comment .sidebar_wrapper {
+  flex-direction: row;
+  height: auto;
+  width: 100px;
 }
