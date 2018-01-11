@@ -159,6 +159,10 @@ form label{
   padding: 10px;
 }
 
+.nav a:hover {
+  background-color: gray;
+}
+
 .item_index_item.dont_display {
   display: none;
 }
