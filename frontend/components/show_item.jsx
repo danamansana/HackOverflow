@@ -64,6 +64,7 @@ class ShowItem extends React.Component {
     let commentButtonDisplay = {false: "comment_button", true: "hide"};
     let commentFormDisplay = {true: "comment_form", false: "hide"};
     let commentModalDisplay = {true: "commentModal", false: "hide"};
+    
     return(
       <div className={this.state.className} id={this.props.top ? "top" : ""}>
         <section className="sidebar">
@@ -80,15 +81,16 @@ class ShowItem extends React.Component {
           <button onClick={this.handleDelete} value="Delete" className={deleteDisplay[this.state.bodydisplay]}>Delete</button>
           <div className={bodyModalDisplay[this.state.bodydisplay]} onClick={this.toggleBody}/>
           <h3 className="username">{this.props.user.username}</h3>
-          <section className={commentFormDisplay[this.state.commentDisplay]}>
-            <textarea></textarea>
-          </section>
           <ul className="commentList">
-            {Object.values(this.props.items).filter(item => (item.content_type === "comment" && item.parent_id === this.props.item.id )).map(comment => <ShowItem item={comment} user={this.props.users[comment.id]} likes={this.props.likes} createLike={this.props.createLike}
+            {Object.values(this.props.items).filter(item => (item.content_type === "comment" && item.parent_id === this.props.item.id )).map(comment => <ShowItem item={comment} items={this.props.items} user={this.props.users[comment.id]} likes={this.props.likes} createLike={this.props.createLike}
                currentUser={this.props.currentUser} updateItem={this.props.updateItem} deleteItem={this.props.deleteItem}/>)}
           </ul>
           <h2 className={commentButtonDisplay[this.state.commentDisplay] } onClick={this.toggleComment}>add a comment</h2>
           <div className={commentModalDisplay[this.state.commentDisplay]} onClick={this.toggleComment}/>
+          <section className={commentFormDisplay[this.state.commentDisplay]}>
+            <ItemForm userId={this.props.currentUser.id} body="" content_type="comment"
+              parent_id={this.props.item.id} className="comment" method={this.props.createItem}/>
+          </section>
         </section>
 
       </div>
