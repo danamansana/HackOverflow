@@ -185,6 +185,23 @@
   border: none;
 }
 
+.answer_box .titleError {
+  color: white;
+  background-color: red;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  border: none;
+}
+.answer_box .bodyError {
+  color: white;
+  background-color: red;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  border: none;
+}
+
 #top {
   border-bottom: none;
 }

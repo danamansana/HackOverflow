@@ -57,11 +57,11 @@ class ItemForm extends React.Component {
     <div className={this.props.className}>
       <form onSubmit={this.fixedHandleSubmit} >
         <label className="titleLabel">Title</label>
-        <input type="text" value={this.state.title} onChange={this.handleChange("title")}></input>
         <h1 className={titleErrorClass[this.state.titleErrors]}>Title can't be blank</h1>
+        <input type="text" value={this.state.title} onChange={this.handleChange("title")}></input>
         <label className="questionLabel">Question</label>
-        <textarea value={this.state.body} onChange={this.handleChange("body")}>{this.state.body}</textarea>
         <h1 className={bodyErrorClass[this.state.bodyErrors]}>Body can't be blank</h1>
+        <textarea value={this.state.body} onChange={this.handleChange("body")}>{this.state.body}</textarea>
         <input type="submit" value="Post" className="submit"></input>
       </form>
     </div>);

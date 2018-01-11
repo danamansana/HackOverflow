@@ -30,6 +30,7 @@
   position:relative;
   height: 350px;
   align-items: center;
+  flex-direction: column;
 }
 
 #root {
@@ -71,6 +72,7 @@ form label{
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgb(228, 230, 232);
+  height: 60px;
 }
 
 .nav form {
@@ -83,6 +85,11 @@ form label{
   width: 150px;
   height: 100%;
   box-sizing: border-box;
+}
+
+.nav form input:focus{
+  width: 250px;
+  transition-duration: 1s;
 }
 .nav form .submit {
   background-color: rgb(102, 191, 255);
@@ -148,6 +155,10 @@ form label{
   height: 50px;
 }
 
+.nav .signup:hover{
+  padding: 5px;
+}
+
 .nav .ask {
   border: 1px solid rgb(0, 149, 255);
   border-radius: 2px;
@@ -157,16 +168,76 @@ form label{
   font-weight: 400;
   text-decoration: none;
   padding: 10px;
+  box-sizing: border-box;
 }
-
-.nav a:hover {
+.nav .link_holder{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav .link_holder:hover {
   background-color: gray;
 }
 
 .item_index_item.dont_display {
   display: none;
 }
+.session_form .session_toggle {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid rgb(228, 230, 232);
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 20px;
+}
 
+.session_form .session_toggle .selected{
+  position: absolute;
+
+  border-top:  2px solid rgb(228, 230, 232);
+  border-left: 2px solid rgb(228, 230, 232);
+  border-right:  2px solid rgb(228, 230, 232);
+  border-bottom: 2px solid white;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: black;
+  font-size: 15px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.session_form .session_toggle a {
+  color: black;
+  font-size: 15px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+}
+.session_form .session_toggle .unselected{
+  position: absolute;
+
+  padding-left: 5px;
+  padding-right: 5px;
+  color: black;
+  font-size: 15px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.session_form .selected:hover{
+  background-color: gray;
+}
+
+
+.session_form .unselected:hover{
+  background-color: gray;
+}
+
+.session_form .session_toggle #login {
+  left: 75px;
+}
 .session_form .button {
   background-color: rgb(0, 119, 204);
   font-size: 13px;

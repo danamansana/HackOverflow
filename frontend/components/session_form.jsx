@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -46,6 +46,14 @@ class SessionForm extends React.Component {
 
     return (
       <div className='session_form'>
+        <div className='session_toggle'>
+          <div className= {(this.props.formType === "login" ? "unselected" : "selected")}>
+            <Link to="/signup">Sign Up</Link>
+          </div>
+          <div className= {(this.props.formType !== "login" ? "unselected" : "selected")} id="login">
+            <Link to="/login">Log In</Link></div>
+
+        </div>
         <form onSubmit={this.handleSubmit} >
           <div className='labelcontainer'>
             <label>

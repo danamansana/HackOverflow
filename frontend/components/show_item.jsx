@@ -48,8 +48,11 @@ class ShowItem extends React.Component {
   }
 
   toggleBody(){
+    if(this.props.currentUser && this.props.currentUser.id === this.props.item.user_id)
+    {
 
-    this.setState({bodydisplay: !this.state.bodydisplay});
+      this.setState({bodydisplay: !this.state.bodydisplay});
+    }
   }
   toggleComment(){
     this.setState({commentDisplay: !this.state.commentDisplay});

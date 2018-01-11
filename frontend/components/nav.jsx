@@ -19,22 +19,35 @@ class Nav extends React.Component {
       return (
         <div className="nav" >
           <h1><i className="fa fa-stack-overflow" aria-hidden="true"></i><h1 className="hack">hack</h1>Overflow</h1>
-          <Link to="/" className="show_link">Questions</Link>
+          <div className="link_holder">
+            <Link to="/" className="show_link">Questions</Link>
+          </div>
           <SearchBar updateFilters={this.props.updateFilters} history={this.props.history}/>
           <h1>{this.props.currentUser.username}</h1>
-          <Link to={"/ask"} className="ask">Ask Question</Link>
-          <button onClick= {this.signout} className="login_out">LogOut</button>
+          <div className="link_holder">
+            <Link to={"/ask"} className="ask">Ask Question</Link>
+          </div>
+          <div className="link_holder">
+
+            <button onClick= {this.signout} className="login_out">LogOut</button>
+          </div>
         </div>
       );
     } else {
       return (
         <div className="nav">
           <h1><i className="fa fa-stack-overflow" aria-hidden="true"></i><h1 className="hack">hack</h1>Overflow</h1>
-          <Link to="/" className="show_link">Questions</Link>
-            <SearchBar updateFilters={this.props.updateFilters} history={this.props.history} />
+          <div className="link_holder">
 
-            <Link to= '/login' className="login_out">Log In</Link>
-            <Link to= '/signup' className="signup">Sign Up</Link>
+            <Link to="/" className="show_link">Questions</Link>
+          </div>
+            <SearchBar updateFilters={this.props.updateFilters} history={this.props.history} />
+            <div className="link_holder">
+
+              <Link to= '/login' className="login_out">Log In</Link>
+            </div>
+            
+              <Link to= '/signup' className="signup">Sign Up</Link>
         </div>);
     }
 
