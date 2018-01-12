@@ -42,3 +42,4 @@ def self.descendents(id, hash)
   end
   
   ```
+Everything (questions, answers, and comments) is an item, and every item is displayed by a React ShowItem component. This helps keep the code DRY. 
