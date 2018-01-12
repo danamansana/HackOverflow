@@ -37,7 +37,7 @@ It is then used in the following code to recursively generate all the descendent
 ```
 def self.descendents(id, hash)
     return [] unless hash[id]
-    #return [] if Item.find_by(id: id).parent_id == id
+    return [] if Item.find_by(id: id).parent_id == id
     hash[id].map {|child| descendents(child.id.to_i, hash)}.flatten.concat(hash[id])
   end
   
