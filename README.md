@@ -14,6 +14,6 @@ Hackoverflow supports the following features:
 
 
 ## Live Site
-<a src="https://aa-hack-overflow.herokuapp.com/#/" />
+<a src="https://aa-hack-overflow.herokuapp.com/#/">HackOverflow</a>
 
 
