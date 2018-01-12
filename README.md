@@ -16,4 +16,17 @@ Hackoverflow supports the following features:
 ## Live Site
 [HackOverflow](https://aa-hack-overflow.herokuapp.com/#/)
 
-##Implementation
+## Implementation
+
+The most technically interesting implementation detail is probably finding all descendents (answers, comments, comments on answers) of a question in order for the site to display that question, without generating an N+1 problem when the site queries the database. This is achieved by using a single database query to generate a hash that records all items together with their children, and can then be used to find all descendents:
+
+```
+def self.item_hasher
+    all_items = Item.includes(:likes, :user).all
+    item_hash_value = Hash.new {|h,k| h[k] = []}
+    all_items.each do |item|
+      item_hash_value[item.parent_id].push(item)
+    end
+    return item_hash_value
+  end
+  ```
