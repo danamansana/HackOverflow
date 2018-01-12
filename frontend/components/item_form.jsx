@@ -39,11 +39,11 @@ class ItemForm extends React.Component {
       this.setState({bodyErrors: errors.body, titleErrors: errors.title});
       return 0;
     }
-    debugger
+    
     this.props.method(item)
     .then(
       (action) => {
-        debugger
+
         if(this.props.redirect){
           this.props.history.push(`/question/${action.item.id}`);
       }
