@@ -20,6 +20,8 @@ Hackoverflow supports the following features:
 
 The most technically interesting implementation detail is probably finding all descendents (answers, comments, comments on answers) of a question in order for the site to display that question, without generating an N+1 problem when the site queries the database. This is achieved by using a single database query to generate a hash that records all items together with their children, and can then be used to find all descendents:
 
+The following code generates the hash:
+
 ```
 def self.item_hasher
     all_items = Item.includes(:likes, :user).all
@@ -29,4 +31,14 @@ def self.item_hasher
     end
     return item_hash_value
   end
+  ```
+It is then used in the following code to recursively generate all the descendents of a given item:
+
+```
+def self.descendents(id, hash)
+    return [] unless hash[id]
+    #return [] if Item.find_by(id: id).parent_id == id
+    hash[id].map {|child| descendents(child.id.to_i, hash)}.flatten.concat(hash[id])
+  end
+  
   ```
