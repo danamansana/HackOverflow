@@ -85,6 +85,7 @@ form label{
   width: 150px;
   height: 100%;
   box-sizing: border-box;
+  font-size: 14px;
 }
 
 .nav form input:focus{

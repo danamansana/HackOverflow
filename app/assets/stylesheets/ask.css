@@ -14,8 +14,12 @@
   width: 700px;
 }
 
+.ask form input{
+  font-size: 14px;
+}
 .ask form textarea {
   height: 300px;
+  font-size: 14px;
 }
 
 .ask form .submit {
