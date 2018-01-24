@@ -31,7 +31,7 @@ class ItemIndex extends React.Component {
     return(
       <ul className= "item_index">
         <div>Top Questions</div>
-        {Object.values(this.state.items).map(item => <ItemIndexItem item={item} filters = {this.props.filters}/>)}
+        {Object.values(this.state.items).map(item => <ItemIndexItem item={item} filters = {this.props.filters} key={item.id}/>)}
       </ul>
     );
   }

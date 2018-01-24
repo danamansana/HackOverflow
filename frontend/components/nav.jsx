@@ -19,7 +19,10 @@ class Nav extends React.Component {
     if (this.props.currentUser) {
       return (
         <div className="nav" >
-          <h1><i className="fa fa-stack-overflow" aria-hidden="true"></i><h1 className="hack">hack</h1>Overflow</h1>
+          <h1 className="logo">
+            <Link to="/">
+            <i className="fa fa-stack-overflow" aria-hidden="true"></i>
+            <h1 className="hack">hack</h1>Overflow</Link></h1>
           <div className="link_holder">
             <Link to="/" className="show_link">Questions</Link>
           </div>
@@ -37,7 +40,7 @@ class Nav extends React.Component {
     } else {
       return (
         <div className="nav">
-          <h1><i className="fa fa-stack-overflow" aria-hidden="true"></i><h1 className="hack">hack</h1>Overflow</h1>
+          <h1 className="logo"><Link to="/"><i className="fa fa-stack-overflow" aria-hidden="true"></i><h1 className="hack">hack</h1>Overflow</Link></h1>
           <div className="link_holder">
 
             <Link to="/" className="show_link">Questions</Link>

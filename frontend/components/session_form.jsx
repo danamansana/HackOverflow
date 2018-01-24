@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
     };
     this.changeInput = this.changeInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demo = this.demo.bind(this);
   }
 
   changeInput(type) {
@@ -31,6 +32,11 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm.bind(this)(user);
+  }
+
+  demo(e){
+    e.preventDefault();
+    this.props.processForm.bind(this)({username: "Edward Teller", password: "password"});
   }
 
 
@@ -70,6 +76,8 @@ class SessionForm extends React.Component {
           <div className="buttoncontainer">
             <input className="button" type="submit" value={formButtonText}></input>
           </div>
+          <div className="buttoncontainer">
+          <button onClick={this.demo} className="button" value="Demo">Demo</button></div>
           <h1 className={errorClassName(displayErrors)} id="nameErrors">{displayErrors}
           </h1>
           <div className="display_thumb">
