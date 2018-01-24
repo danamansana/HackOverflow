@@ -40,6 +40,7 @@ class Nav extends React.Component {
     } else {
       return (
         <div className="nav">
+          
           <h1 className="logo"><Link to="/"><i className="fa fa-stack-overflow" aria-hidden="true"></i><h1 className="hack">hack</h1>Overflow</Link></h1>
           <div className="link_holder">
 
