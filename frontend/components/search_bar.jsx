@@ -28,7 +28,7 @@ class SearchBar extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <input type="text" value={this.state.query} onChange={this.handleChange}></input>
 
-        <button class="submit"><i class="fa fa-search"></i></button>
+        <button className="submit"><i className="fa fa-search"></i></button>
       </form>
     );
   }

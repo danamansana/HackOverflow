@@ -96,7 +96,7 @@ class ShowItem extends React.Component {
 
           <ul className="commentList">
             {Object.values(this.props.items).filter(item => (item.content_type === "comment" && item.parent_id === this.props.item.id )).map(comment =>
-              <ShowItem item={comment} items={this.props.items} comment="comment"
+              <ShowItem item={comment} items={this.props.items} key={comment.id} comment="comment"
                 user={this.props.users[comment.id]} likes={this.props.likes} createLike={this.props.createLike}
                 currentUser={this.props.currentUser} updateItem={this.props.updateItem} deleteItem={this.props.deleteItem}/>)}
               </ul>
