@@ -27,7 +27,7 @@ class Nav extends React.Component {
             <Link to="/" className="show_link">Questions</Link>
           </div>
           <SearchBar updateFilters={this.props.updateFilters} history={this.props.history}/>
-          <h1>{this.props.currentUser.username}</h1>
+          <h1 className="username">{this.props.currentUser.username}</h1>
           <div className="link_holder">
             <Link to={"/ask"} className="ask">Ask Question</Link>
           </div>
@@ -40,7 +40,7 @@ class Nav extends React.Component {
     } else {
       return (
         <div className="nav">
-          
+
           <h1 className="logo"><Link to="/"><i className="fa fa-stack-overflow" aria-hidden="true"></i><h1 className="hack">hack</h1>Overflow</Link></h1>
           <div className="link_holder">
 

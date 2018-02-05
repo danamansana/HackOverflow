@@ -81,6 +81,12 @@ form label{
   display: flex;
   height: 50px;
 }
+
+.nav .username {
+  font-size: 20px;
+  font-weight: 400px;
+  font-family: Arial, Helvetica, "Helvetica Neue", sans-serif;
+}
 .nav form input {
   border: 1px solid rgb(200, 204, 208);
   border-radius: 3px;

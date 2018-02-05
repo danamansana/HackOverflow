@@ -23,7 +23,7 @@ class Question extends React.Component{
     let title = (Object.keys(this.props.items).length === 0 ? "" : this.props.items[this.state.ownId].title);
     let userId = (this.props.currentUser ? this.props.currentUser.id : "");
     return(
-      <div>
+      <div className="questionHolder">
         <h1 className = "title">{title}</h1>
         <h1 className = "question">
         {Object.values(this.props.items).filter(item => (item.content_type === "question")).map(item => <ShowItem item={item} user={this.props.users[item.id]}
